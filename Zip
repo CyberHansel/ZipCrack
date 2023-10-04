@@ -1,0 +1,9 @@
+$ 7z l -slt archive.zip # check the method and get the CRC
+CRC = 3A537F80 #byte "just before the plaintext" based on the CRC value, it would be the most significant byte, which is 0x3A
+Method = ZipCrypto Deflate
+#File inside ZIP - 1546 BX defN 22-Sep-07 23:51  Time Dilation Calculator.lnk  
+1.) 1546: This is the size of the file in bytes when it's uncompressed.
+2.) we know that this file starts with 4C 00 00 00
+
+$ printf '\x4C\x00\x00\x00' > plain.lnk
+$ bkcrack -C forensics_time_dilation.zip -c "BlackHole Time Dilation Calculator.lnk" -p plain.lnk -x -1 3A
