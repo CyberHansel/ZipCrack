@@ -5,8 +5,9 @@ Method = ZipCrypto Deflate
 1.) 1546: This is the size of the file in bytes when it's uncompressed.
 2.) we know that this file starts with 4C 00 00 00 - The header size and 01 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 - The LNK class identifier GUID
 
-printf '\x4C\x00\x00\x00\x01\x14\x02\x00\x00\x00\x00\x00\xC0\x00\x00\x00\x00\x00\x00\x46' > plain.lnk
-./bkcrack -C forensics_time_dilation.zip -c "BlackHole Time Dilation Calculator.lnk" -p plain.lnk -x -1 85  
+$ echo -ne '\x4C\x00\x00\x00\x01\x14\x02\x00\x00\x00\x00' > plain.lnk
+$ hexdump -C plain.lnk  #test whats in file
+$ ./bkcrack -C forensics_time_dilation.zip -c "BlackHole Time Dilation Calculator.lnk" -p plain.lnk -x -1 85  
 
 
 
