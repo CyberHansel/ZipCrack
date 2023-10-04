@@ -8,3 +8,15 @@ Method = ZipCrypto Deflate
 printf '\x4C\x00\x00\x00\x01\x14\x02\x00\x00\x00\x00\x00\xC0\x00\x00\x00\x00\x00\x00\x46' > plain.lnk
 ./bkcrack -C forensics_time_dilation.zip -c "BlackHole Time Dilation Calculator.lnk" -p plain.lnk -x -1 85  
 
+
+
+$ unzip -v forensics_time_dilation.zip  #determine if files inside are compressed or decompressed
+-------------------------------------------------------------------------
+Archive:  forensics_time_dilation.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+    1546  Defl:N      832  46% 2022-09-07 23:51 851051ef  BlackHole Time Dilation Calculator.lnk
+  202068  Defl:N    79076  61% 2022-09-07 21:21 3a537f80  time.pcap
+--------          -------  ---                            -------
+  203614            79908  61%                            2 files
+-------------------------------------------------------------------------
