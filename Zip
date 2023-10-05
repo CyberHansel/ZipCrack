@@ -21,3 +21,15 @@ Archive:  forensics_time_dilation.zip
 --------          -------  ---                            -------
   203614            79908  61%                            2 files
 -------------------------------------------------------------------------
+
+$ ./bkcrack -L forensics_time_dilation.zip
+------------------------------------------------------------------------
+bkcrack 1.5.0 - 2022-07-07
+Archive: forensics_time_dilation.zip
+Index Encryption Compression CRC32    Uncompressed  Packed size Name
+----- ---------- ----------- -------- ------------ ------------ ----------------
+    0 ZipCrypto  Deflate     851051ef         1546          844 BlackHole Time Dilation Calculator.lnk
+    1 ZipCrypto  Deflate     3a537f80       202068        79088 time.pcap
+
+
+
